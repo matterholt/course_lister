@@ -8,9 +8,11 @@ from rest_framework import generics
 
 
 # Create your views here.
-class coursesList_all ():
-    pass
+class coursesList(generics.ListCreateAPIView):
+    queryset = CourseList.objects.all()
+    serializer_class = CourseListSerializer
 
 
-class coursesList_details():
-    pass
+class coursesList_singles(generics.RetrieveUpdateDestroyAPIView):
+    queryset = CourseList.objects.all()
+    serializer_class = CourseListSerializer

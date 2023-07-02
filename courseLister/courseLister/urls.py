@@ -21,5 +21,5 @@ from courseLister_api import urls as courseLister_urls
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
-    path("courses/", include(courseLister_urls)),
+    path("api_v1/", include(courseLister_urls)),
 ]
