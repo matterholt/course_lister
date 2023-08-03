@@ -1,8 +1,15 @@
 from rest_framework import serializers
-from courseLister_api.models import CourseList
+from courseLister_api.models import CourseSummary
+from courseLister_api.models import LessonDetails
 
 
-class CourseListSerializer (serializers.ModelSerializer):
+class CourseListSerializer(serializers.ModelSerializer):
     class Meta:
-        model = CourseList
-        fields = ['created','title','description','author','link', 'subject']
+        model = CourseSummary
+        fields = ["id", "created", "title", "description", "author", "subject_matter"]
+
+
+class LessonDetailsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LessonDetails
+        fields = ["title", "chapter_number", "description", "course_id"]
