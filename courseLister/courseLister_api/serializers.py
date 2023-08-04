@@ -13,3 +13,8 @@ class LessonDetailsSerializer(serializers.ModelSerializer):
     class Meta:
         model = LessonDetails
         fields = ["title", "chapter_number", "description", "course_id"]
+
+
+class CombinedModelSerializer(serializers.Serializer):
+    model_a = CourseListSerializer()
+    model_b = LessonDetailsSerializer()
